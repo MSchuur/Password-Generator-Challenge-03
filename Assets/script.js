@@ -23,7 +23,7 @@ function writePassword() {
 
   // Prompt to ask and confirm if lowercase letters are to be used
   for (x=1; x<2; x++) {
-    var lowerCase = window.prompt("Do you want to use lowercase Letters in your Password? Enter Y or N");
+    var lowerCase = window.prompt("Do you want to use Lower Case Letters in your Password? Enter Y or N");
       lowerCase = lowerCase.toUpperCase();
       console.log(lowerCase);
       if (lowerCase === "Y") {
@@ -36,6 +36,20 @@ function writePassword() {
       }
   }
   
+  // Prompt to ask and comfirm if lowercase letters are to be used
+  for (x=1; x<2; x++) {
+    var upperCase = window.prompt("Do you want to use Upper Case Letters in your Password? Enter Y or N");
+      upperCase = upperCase.toUpperCase();
+      console.log(upperCase);
+      if (upperCase === "Y") {
+        passWordArray.push(passWordUpper);
+        console.log(passWordArray);
+        x = 2;
+      }
+      else if (lowerCase !== "Y") {
+        window.prompt("Are you sure you do not wish to use Upper Case Letters? Enter Y or N");
+      }
+  }
   console.log
   
     
