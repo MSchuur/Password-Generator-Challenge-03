@@ -21,7 +21,7 @@ function writePassword() {
     return
   } 
 
-  // Prompt to ask and confirm if lowercase letters are to be used
+  // Prompt to ask and confirm if Lower Case letters are to be used
   for (x=1; x<2; x++) {
     var lowerCase = window.prompt("Do you want to use Lower Case Letters in your Password? Enter Y or N");
       lowerCase = lowerCase.toUpperCase();
@@ -36,7 +36,7 @@ function writePassword() {
       }
   }
   
-  // Prompt to ask and comfirm if lowercase letters are to be used
+  // Prompt to ask and comfirm if Upper Case letters are to be used
   for (x=1; x<2; x++) {
     var upperCase = window.prompt("Do you want to use Upper Case Letters in your Password? Enter Y or N");
       upperCase = upperCase.toUpperCase();
@@ -46,10 +46,33 @@ function writePassword() {
         console.log(passWordArray);
         x = 2;
       }
-      else if (lowerCase !== "Y") {
+      else if (upperCase !== "Y") {
         window.prompt("Are you sure you do not wish to use Upper Case Letters? Enter Y or N");
       }
   }
+  
+  // Prompt to ask and comfirm if Nubmers are to be used
+  
+  for (x=1; x<2; x++) {
+    var nums = window.prompt("Do you want to use Numbers in your Password? Enter Y or N");
+      nums = nums.toUpperCase();
+      console.log(nums);
+      if (nums === "Y") {
+        passWordArray.push(passWordNum);
+        console.log(passWordArray);
+        x = 2;
+      }
+      else if (nums !== "Y") {
+        window.prompt("Are you sure you do not wish to use Numbers? Enter Y or N");
+      }
+  }
+  
+  
+  
+  
+  
+  
+  
   console.log
   
     
