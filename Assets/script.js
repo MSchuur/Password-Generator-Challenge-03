@@ -22,7 +22,7 @@ function writePassword() {
   } 
 
   // Prompt to ask and confirm if Lower Case letters are to be used
-  for (x=1; x<2; x++) {
+  for (x=0; x<2; x++) {
     var lowerCase = window.prompt("Do you want to use Lower Case Letters in your Password? Enter Y or N");
       lowerCase = lowerCase.toUpperCase();
       console.log(lowerCase);
@@ -31,13 +31,13 @@ function writePassword() {
         console.log(passWordArray);
         x = 2;
       }
-      else if (lowerCase !== "Y") {
-        window.prompt("Are you sure you do not wish to use Lower Case Letters? Enter Y or N");
+      else if (lowerCase !== "Y" && x <1) {
+        window.alert("Please confirm that you do not wish to use Lower Case Lettes");
       }
   }
   
   // Prompt to ask and comfirm if Upper Case letters are to be used
-  for (x=1; x<2; x++) {
+  for (x=0; x<2; x++) {
     var upperCase = window.prompt("Do you want to use Upper Case Letters in your Password? Enter Y or N");
       upperCase = upperCase.toUpperCase();
       console.log(upperCase);
@@ -46,14 +46,14 @@ function writePassword() {
         console.log(passWordArray);
         x = 2;
       }
-      else if (upperCase !== "Y") {
-        window.prompt("Are you sure you do not wish to use Upper Case Letters? Enter Y or N");
+      else if (upperCase !== "Y" && x <1) {
+        window.alert("Please confirm that you do not wish to use Upper Case Lettes");
       }
   }
   
   // Prompt to ask and comfirm if Nubmers are to be used
   
-  for (x=1; x<2; x++) {
+  for (x=0; x<2; x++) {
     var nums = window.prompt("Do you want to use Numbers in your Password? Enter Y or N");
       nums = nums.toUpperCase();
       console.log(nums);
@@ -62,8 +62,24 @@ function writePassword() {
         console.log(passWordArray);
         x = 2;
       }
-      else if (nums !== "Y") {
-        window.prompt("Are you sure you do not wish to use Numbers? Enter Y or N");
+      else if (nums !== "Y" && x <1) {
+        window.alert("Please confirm that you do not wish to use Numbers");
+      }
+  }
+  
+  // Prompt to ask and comfirm if Special Characters are to be used
+  
+  for (x=0; x<2; x++) {
+    var specChar = window.prompt("Do you want to use Special Characters in your Password? Enter Y or N");
+      specChar = specChar.toUpperCase();
+      console.log(specChar);
+      if (specChar === "Y") {
+        passWordArray.push(passWordSpecial);
+        console.log(passWordArray);
+        x = 2;
+      }
+      else if (specChar !== "Y" && x <1) {
+        window.alert("Please confirm that you do not wish to use Special Characters");
       }
   }
   
@@ -71,9 +87,7 @@ function writePassword() {
   
   
   
-  
-  
-  console.log
+  console.log(passWordLength)
   
     
       
