@@ -1,7 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 // Creating the variables characters that will be used to generate password
-var passWordLenght = 0;
 var passWordLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var passWordUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var passWordNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -10,10 +9,21 @@ var passWordSpecial = ["!", "@", "#", "$", "%", "^", "&", "*"]
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  passWordLenght = window.prompt("How many charatcers long do you wish to make your new Password (8-129)");
+  if (passWordLength <8 && passWordLength > 129) {
+    window.prompt("The number that you have chosen does not meet the criteria. Please enter a number between 8 and 129.");
+    }
+  
 
-  passwordText.value = password;
+
+
+
+
+
+  // var password = generatePassword();
+  // var passwordText = document.querySelector("#password");
+
+  // passwordText.value = password;
 
 }
 
