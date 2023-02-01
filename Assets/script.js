@@ -5,17 +5,56 @@ var passWordLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
 var passWordUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var passWordNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var passWordSpecial = ["!", "@", "#", "$", "%", "^", "&", "*"]
-
+var passWordArray = [];
+var passWordLength = 0;
 
 // Write password to the #password input
 function writePassword() {
-  passWordLenght = window.prompt("How many charatcers long do you wish to make your new Password (8-129)");
-  if (passWordLength <8 && passWordLength > 129) {
-    window.prompt("The number that you have chosen does not meet the criteria. Please enter a number between 8 and 129.");
+  wordLength();
+// Prompt to select the number of characters for the password
+  function wordLength() {
+    passWordLength = window.prompt("How many charatcers long do you wish to make your new Password (8-129)");
+    if (passWordLength <=7 || passWordLength >128) {
+      window.alert("The number of characters that you have chosen does not meet the criteria. Please choose a number between 8 and 129!");
+      wordLength();
     }
+    return
+  } 
+
+  // Prompt to ask and confirm if lowercase letters are to be used
+  for (x=1; x<2; x++) {
+    var lowerCase = window.prompt("Do you want to use lowercase Letters in your Password? Enter Y or N");
+      lowerCase = lowerCase.toUpperCase();
+      console.log(lowerCase);
+      if (lowerCase === "Y") {
+        passWordArray.push(passWordLower);
+        console.log(passWordArray);
+        x = 2;
+      }
+      else if (lowerCase !== "Y") {
+        window.prompt("Are you sure you do not wish to use Lower Case Letters? Enter Y or N");
+      }
+  }
   
+  console.log
+  
+    
+      
+  
+  
+// Prompt to ask and confirm if lowercase letters are to be used
+  // var lowerCase = window.prompt("Do you want to use lowercase Letters in your Password? Enter Y or N");
+  // lowerCase.toUpperCase
+  // if (lowerCase === "Y") {
+  //   passWordArray.push(passWordLower);
+  //   console.log(passWordArray);
+  // }
+  
+  // else if (lowerCase !== "Y") {
+  //   window.prompt("Are you sure You do not wish to use Lower Case Letters? Enter Y or N");
+  // }
 
-
+  console.log(passWordLength);
 
 
 
