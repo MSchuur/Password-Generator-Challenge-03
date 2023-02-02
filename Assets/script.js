@@ -26,16 +26,17 @@ function writePassword() {
     return
   } 
 //  Creating an Array of all eligable characters from the prompts
-  for (x=0; x < passWordIndex.length; x++) {
-    var answer = window.prompt("Do you want to use " + passWordIndex[x] + " in your Password? Enter Y or N");
+  for (i=0; i < passWordIndex.length; i++) {
+    var answer = window.prompt("Do you want to use " + passWordIndex[i] + " in your Password? Enter Y or N");
     answer = answer.toUpperCase();
     if (answer === "Y") {
-      passWordArray = passWordArray + passWordVar[x];
+      passWordArray = passWordArray + passWordVar[i];
       console.log(passWordArray);
     }
-      // else if (answer !== "Y" && i <1) {
-      //   window.alert("Please confirm that you do not wish to use " +  passWordIndex[x]);
-      // }
+    else {
+      answer = window.alert("Your Password is not as strong as it can be if you do not use " +  passWordIndex[i]);
+      
+    }
   }
   console.log(passWordLength);
   function generatePassword(passwordText) {
@@ -46,13 +47,7 @@ function writePassword() {
     console.log(passwordText)
     return passwordText
   }
-  console.log(passwordText);
-  
-  // var index = Math.floor(Math.random() *passWordArray.length);
-      // passWordArray[index];
-      // console.log(index);
-      // console.log(passWordArray[index]);
- 
+   
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
