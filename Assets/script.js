@@ -1,17 +1,22 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
 // Creating the variables characters that will be used to generate password
-var passWordLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var passWordUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var passWordNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var passWordSpecial = ["!", "@", "#", "$", "%", "^", "&", "*"]
+var passWordLower = ['abcdefghijklmnopqrstuvwxyz'];
+var passWordUpper = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+var passWordNum = ['0123456789'];
+var passWordSpecial = ['!@#$%^&*'];
 var passWordArray = [];
-var passWordLength = 0;
+var passWordLength;
+var passWordIndex = ["Lower Case Letters", "Upper Case Letters", "Numbers", "Special Characters"]
+var passWordVar = [passWordLower, passWordUpper, passWordNum, passWordSpecial]
+
 
 // Write password to the #password input
 function writePassword() {
   wordLength();
-// Prompt to select the number of characters for the password
+
+  // Prompt to select the number of characters for the password
   function wordLength() {
     passWordLength = window.prompt("How many charatcers long do you wish to make your new Password (8-129)");
     if (passWordLength <=7 || passWordLength >128) {
@@ -20,100 +25,38 @@ function writePassword() {
     }
     return
   } 
-
-  // Prompt to ask and confirm if Lower Case letters are to be used
-  for (x=0; x<2; x++) {
-    var lowerCase = window.prompt("Do you want to use Lower Case Letters in your Password? Enter Y or N");
-      lowerCase = lowerCase.toUpperCase();
-      console.log(lowerCase);
-      if (lowerCase === "Y") {
-        passWordArray.push(passWordLower);
-        console.log(passWordArray);
-        x = 2;
-      }
-      else if (lowerCase !== "Y" && x <1) {
-        window.alert("Please confirm that you do not wish to use Lower Case Lettes");
-      }
+//  Creating an Array of all eligable characters from the prompts
+  for (x=0; x < passWordIndex.length; x++) {
+    var answer = window.prompt("Do you want to use " + passWordIndex[x] + " in your Password? Enter Y or N");
+    answer = answer.toUpperCase();
+    if (answer === "Y") {
+      passWordArray = passWordArray + passWordVar[x];
+      console.log(passWordArray);
+    }
+      // else if (answer !== "Y" && i <1) {
+      //   window.alert("Please confirm that you do not wish to use " +  passWordIndex[x]);
+      // }
   }
-  
-  // Prompt to ask and comfirm if Upper Case letters are to be used
-  for (x=0; x<2; x++) {
-    var upperCase = window.prompt("Do you want to use Upper Case Letters in your Password? Enter Y or N");
-      upperCase = upperCase.toUpperCase();
-      console.log(upperCase);
-      if (upperCase === "Y") {
-        passWordArray.push(passWordUpper);
-        console.log(passWordArray);
-        x = 2;
-      }
-      else if (upperCase !== "Y" && x <1) {
-        window.alert("Please confirm that you do not wish to use Upper Case Lettes");
-      }
-  }
-  
-  // Prompt to ask and comfirm if Nubmers are to be used
-  
-  for (x=0; x<2; x++) {
-    var nums = window.prompt("Do you want to use Numbers in your Password? Enter Y or N");
-      nums = nums.toUpperCase();
-      console.log(nums);
-      if (nums === "Y") {
-        passWordArray.push(passWordNum);
-        console.log(passWordArray);
-        x = 2;
-      }
-      else if (nums !== "Y" && x <1) {
-        window.alert("Please confirm that you do not wish to use Numbers");
-      }
-  }
-  
-  // Prompt to ask and comfirm if Special Characters are to be used
-  
-  for (x=0; x<2; x++) {
-    var specChar = window.prompt("Do you want to use Special Characters in your Password? Enter Y or N");
-      specChar = specChar.toUpperCase();
-      console.log(specChar);
-      if (specChar === "Y") {
-        passWordArray.push(passWordSpecial);
-        console.log(passWordArray);
-        x = 2;
-      }
-      else if (specChar !== "Y" && x <1) {
-        window.alert("Please confirm that you do not wish to use Special Characters");
-      }
-  }
-  
-  
-  
-  
-  
-  console.log(passWordLength)
-  
-    
-      
-  
-  
-// Prompt to ask and confirm if lowercase letters are to be used
-  // var lowerCase = window.prompt("Do you want to use lowercase Letters in your Password? Enter Y or N");
-  // lowerCase.toUpperCase
-  // if (lowerCase === "Y") {
-  //   passWordArray.push(passWordLower);
-  //   console.log(passWordArray);
-  // }
-  
-  // else if (lowerCase !== "Y") {
-  //   window.prompt("Are you sure You do not wish to use Lower Case Letters? Enter Y or N");
-  // }
-
   console.log(passWordLength);
+  function generatePassword(passwordText) {
+    passwordText = "";
+    for (i=0; i < passWordLength; i ++) {
+      passwordText = passwordText + passWordArray[(Math.floor(Math.random() * passWordArray.length))];
+    }
+    console.log(passwordText)
+    return passwordText
+  }
+  console.log(passwordText);
+  
+  // var index = Math.floor(Math.random() *passWordArray.length);
+      // passWordArray[index];
+      // console.log(index);
+      // console.log(passWordArray[index]);
+ 
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-
-
-
-  // var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
-
-  // passwordText.value = password;
+  passwordText.value = password;
 
 }
 
