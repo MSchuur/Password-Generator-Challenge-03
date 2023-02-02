@@ -7,7 +7,7 @@ This webpage is a password generator created IAW the clients criteria that will 
 
 The generator will look as the following:
 
-https://github.com/MSchuur/Password-Generator-Challenge-03/blob/main/Assets/03-javascript-homework-demo.png
+src img = https://github.com/MSchuur/Password-Generator-Challenge-03/blob/main/Assets/03-javascript-homework-demo.png
 
 
 
