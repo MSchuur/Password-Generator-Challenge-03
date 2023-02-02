@@ -7,7 +7,7 @@ This webpage is a password generator created IAW the clients criteria that will 
 
 The generator will look as the following:
 
-Assets\03-javascript-homework-demo.png
+
 
 
 
