@@ -37,6 +37,9 @@ function writePassword() {
   function generteCharacters () {
     for (i=0; i < passWordIndex.length; i++) {
       var answer = window.prompt("Do you want to use " + passWordIndex[i] + " in your Password? Enter Y or N");
+        if(answer === null) {
+          return;
+        }
       answer = answer.toUpperCase();
         if (answer === "Y") {
           passWordArray = passWordArray + passWordVar[i];
@@ -75,4 +78,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword)
