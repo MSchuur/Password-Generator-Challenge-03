@@ -13,11 +13,13 @@ src img = https://github.com/MSchuur/Password-Generator-Challenge-03/blob/main/A
 
 ## Installation
 
-N/A
+To install the password generator click the link below:
+
+https://github.com/MSchuur/Password-Generator-Challenge-03.git
 
 ## Usage
 
-N/A
+Click the Generate Password button to start the generation process.
 
 ## Credits
 
